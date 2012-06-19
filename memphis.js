@@ -1,5 +1,5 @@
 define([
-    'jquery',
+    'jquery'
 ], function($) {
     "use strict";
 
@@ -8,7 +8,7 @@ define([
     memphis.mediator = (function() {
         var channels = {};
 
-        var subscribe = function(channel, fn) {
+        function subscribe(channel, fn) {
             if (!channels[channel]) {
                 channels[channel] = [];
             }
@@ -19,7 +19,7 @@ define([
             });
         };
 
-        var unsubscribe = function(channel, fn) {
+        function unsubscribe(channel, fn) {
             var i, l,
                 ch;
 
@@ -36,7 +36,7 @@ define([
             }
         };
 
-        var publish = function(channel) {
+        function publish(channel) {
             var args,
                 i, l,
                 subscription;
@@ -53,7 +53,7 @@ define([
             }
         };
         
-        var clear = function(channel) {
+        function clear(channel) {
             if (!channels[channel]) {
                 return;
             }
@@ -87,7 +87,7 @@ define([
             },
             breakpoints = [];
 
-        var init = function(breakpoints) {
+        function init(breakpoints) {
             if (breakpoints) {
                 setBreakpoints(breakpoints);
             }
@@ -95,27 +95,24 @@ define([
             viewport.width = win.width();
             viewport.height = win.height();
 
-            win.resize(debounce(onResizeHandler, 300));
+            win.on('resize', debounce(onResizeHandler, 300));
 
             breakpointHandler();
         };
 
-        var getViewport = function() {
+        function getViewport() {
             return viewport;
         };
 
-        var getBreakpoints = function() {
+        function getBreakpoints() {
             return breakpoints;
         };
 
-        var setBreakpoints = function(bps) {
-            if (toString.call(bps) != '[object Array]') {
-                throw "Breakpoints must be an array";
-            }
+        function setBreakpoints(bps) {
             breakpoints = bps;
         };
 
-        var onResizeHandler = function() {
+        function onResizeHandler() {
             var w = win.width(),
                 h = win.height();
 
@@ -130,7 +127,7 @@ define([
             breakpointHandler();
         };
 
-        var breakpointHandler = function() {
+        function breakpointHandler() {
             var bp,
                 selBp = 1;
 
@@ -171,7 +168,7 @@ define([
 
     // debouncing function from John Hann
     // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
-    var debounce = function (func, threshold, execAsap) {
+    function debounce(func, threshold, execAsap) {
         var timeout;
 
         return function debounced () {
