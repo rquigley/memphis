@@ -11,4 +11,4 @@ jQuery 1.6+ for window dimensions and events, require.js
 Tests
 -----
 
-To run the automated tests, open test/testRunner.html in a web browser.
+To run the automated tests, open test/runner.html in a web browser.
