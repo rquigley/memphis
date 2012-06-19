@@ -17,7 +17,7 @@ define([
                 context: this,
                 callback: fn
             });
-        };
+        }
 
         function unsubscribe(channel, fn) {
             var i, l,
@@ -34,7 +34,7 @@ define([
                     return;
                 }
             }
-        };
+        }
 
         function publish(channel) {
             var args,
@@ -51,7 +51,7 @@ define([
                 subscription = channels[channel][i];
                 subscription.callback.apply(subscription.context, args);
             }
-        };
+        }
         
         function clear(channel) {
             if (!channels[channel]) {
@@ -59,7 +59,7 @@ define([
             }
 
             delete channels[channel];
-        };
+        }
 
         return {
             channels: channels,
@@ -98,19 +98,19 @@ define([
             win.on('resize', debounce(onResizeHandler, 300));
 
             breakpointHandler();
-        };
+        }
 
         function getViewport() {
             return viewport;
-        };
+        }
 
         function getBreakpoints() {
             return breakpoints;
-        };
+        }
 
         function setBreakpoints(bps) {
             breakpoints = bps;
-        };
+        }
 
         function onResizeHandler() {
             var w = win.width(),
@@ -125,7 +125,7 @@ define([
             memphis.publish('window.resize', viewport);
 
             breakpointHandler();
-        };
+        }
 
         function breakpointHandler() {
             var bp,
@@ -156,7 +156,7 @@ define([
                 memphis.publish('window.breakpoint.out'+viewport.lastBreakpoint, viewport);
             }
             memphis.publish('window.breakpoint.in'+viewport.currBreakpoint, viewport);
-        };
+        }
 
         return {
             init: init,
@@ -178,7 +178,7 @@ define([
                     func.apply(obj, args);
                 }
                 timeout = null; 
-            };
+            }
 
             if (timeout) {
                 clearTimeout(timeout);
