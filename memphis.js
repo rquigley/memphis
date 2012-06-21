@@ -166,6 +166,8 @@ define([
         };
     }());
 
+    memphis.getViewport = memphis.window.getViewport;
+
     // debouncing function from John Hann
     // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
     function debounce(func, threshold, execAsap) {
@@ -190,7 +192,10 @@ define([
         };
     }
 
-    memphis.getViewport = memphis.window.getViewport;
+    memphis.utils = {
+        debounce: debounce
+    };
+
 
     window.memphis = memphis;
 
