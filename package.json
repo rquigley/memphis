@@ -1,0 +1,22 @@
+{
+  "name": "memphis",
+  "version": "1.0.0",
+  "description": "Library for assisting with the creation of the Javascript portion of websites",
+  "main": "memphis.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rquigley/memphis.git"
+  },
+  "author": "Ryan Quigley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rquigley/memphis/issues"
+  },
+  "homepage": "https://github.com/rquigley/memphis#readme"
+}
